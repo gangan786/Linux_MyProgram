@@ -1,0 +1,66 @@
+cmake_minimum_required(VERSION 3.17)
+project(5_7)
+
+set(CMAKE_CXX_STANDARD 14)
+
+include_directories(nginx/_include)
+include_directories(NtyTcp-master/include)
+
+add_executable(5_7
+        nginx/_include/ngx_c_conf.h
+        nginx/_include/ngx_c_socket.h
+        nginx/_include/ngx_func.h
+        nginx/_include/ngx_global.h
+        nginx/_include/ngx_macro.h
+        nginx/app/nginx.cxx
+        nginx/app/ngx_c_conf.cxx
+        nginx/app/ngx_log.cxx
+        nginx/app/ngx_printf.cxx
+        nginx/app/ngx_setproctitle.cxx
+        nginx/app/ngx_string.cxx
+        nginx/net/ngx_c_socket.cxx
+        nginx/net/ngx_c_socket_accept.cxx
+        nginx/net/ngx_c_socket_conn.cxx
+        nginx/net/ngx_c_socket_inet.cxx
+        nginx/net/ngx_c_socket_request.cxx
+        nginx/proc/ngx_daemon.cxx
+        nginx/proc/ngx_event.cxx
+        nginx/proc/ngx_process_cycle.cxx
+        nginx/signal/ngx_signal.cxx
+        NtyTcp-master/app/nty_example_epoll_rb_server.c
+        NtyTcp-master/app/nty_example_epoll_server.c
+        NtyTcp-master/app/nty_example_posix_block_server.c
+        NtyTcp-master/app/nty_example_tcp_server.c
+        NtyTcp-master/include/nty_addr.h
+        NtyTcp-master/include/nty_api.h
+        NtyTcp-master/include/nty_arp.h
+        NtyTcp-master/include/nty_buffer.h
+        NtyTcp-master/include/nty_config.h
+        NtyTcp-master/include/nty_epoll.h
+        NtyTcp-master/include/nty_epoll_inner.h
+        NtyTcp-master/include/nty_hash.h
+        NtyTcp-master/include/nty_header.h
+        NtyTcp-master/include/nty_mempool.h
+        NtyTcp-master/include/nty_nic.h
+        NtyTcp-master/include/nty_queue.h
+        NtyTcp-master/include/nty_socket.h
+        NtyTcp-master/include/nty_tcp.h
+        NtyTcp-master/include/nty_timer.h
+        NtyTcp-master/include/nty_tree.h
+        NtyTcp-master/src/nty_addr.c
+        NtyTcp-master/src/nty_api.c
+        NtyTcp-master/src/nty_arp.c
+        NtyTcp-master/src/nty_buffer.c
+        NtyTcp-master/src/nty_epoll.c
+        NtyTcp-master/src/nty_epoll_rb.c
+        NtyTcp-master/src/nty_eth.c
+        NtyTcp-master/src/nty_hash.c
+        NtyTcp-master/src/nty_icmp.c
+        NtyTcp-master/src/nty_ip.c
+        NtyTcp-master/src/nty_mempool.c
+        NtyTcp-master/src/nty_nic.c
+        NtyTcp-master/src/nty_socket.c
+        NtyTcp-master/src/nty_stream.c
+        NtyTcp-master/src/nty_tcp.c
+        NtyTcp-master/src/nty_timer.c
+        NtyTcp-master/src/nty_udp.c)
